@@ -9,14 +9,14 @@ logoWidth, logoHeight = logoIm.size
 
 os.makedirs('withLogo', exist_ok=True)
 # Loop over all files in the working directory.
-for filename in os.listdir('.'):
+for filename in os.listdir(os.path.join('.','originals')):
 # skip non-image files and the logo file itself 
     if not (filename.endswith('.png') or filename.endswith('.jpg')) \
         or filename == LOGO_FILENAME:
             continue
     im = Image.open(filename)
     width, height = im.size
-# Check if image needs to be resized.
+        #Check if image needs to be resized.
     if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:
 # Calculate the new width and height to resize to.
         if width > height:
