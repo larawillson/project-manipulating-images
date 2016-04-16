@@ -29,6 +29,6 @@ for filename in os.listdir('.'):
     print('Resizing %s...' % (filename))
     im = im.resize((width, height))
 # Add the logo.
-    print('Adding logo to %s...' % (filename))
-    im.paste(logoIM, (width - logoWidth, height - logoHeight, logoIM)
+    print ('Adding logo to %s...' % (filename))
+    im.paste(logoIm, (width - logoWidth, height - logoHeight), logoIm)
     im.save(os.path.join('withLogo', filename))
